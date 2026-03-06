@@ -50,7 +50,7 @@ lm2 = AutoModelForCausalLM.from_pretrained("UBC-SLIME/colx_531_smollm2-360m")
 
 ## Team Members
 
-<!-- Add team member names and GitHub handles here -->
-- Member 1: TBD
-- Member 2: TBD
-- Member 3: TBD
+- Member 1: Tianhao Cao
+- Member 2: Yusen Huang
+- Member 3: Marco Wang
+- Member 4: Darwin Zhang

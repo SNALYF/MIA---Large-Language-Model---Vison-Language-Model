@@ -14,6 +14,9 @@ Answer the following questions:
 - What does this task try to achieve?
 -->
 
+/section{Task Description}
+The task in this project is to perform a membership inference attack (MIA) on finetuned language models. More specifically, we aim to predict whether a given sample was included in the models’ finetuning dataset by assigning each sample a membership score. This task is important because it helps evaluate whether a model leaks information about its training data, which is closely related to privacy and memorization risks in machine learning systems. Therefore, the goal of this project is to develop a method that can distinguish member samples from non-member samples as accurately as possible and submit these predictions to the Kaggle competition.
+
 ## Data
 
 <!-- 

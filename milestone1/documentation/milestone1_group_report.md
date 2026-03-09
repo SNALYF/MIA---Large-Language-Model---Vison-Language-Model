@@ -99,6 +99,19 @@ Describe your baseline method:
 -->
 ```
 
+__How did you build your baseline?__<br>
+For our initial baseline, we are proposing the sequence-level cross-entropy loss of the target model. We are loading the smaller model (UBC-SLIME/colx_531_smollm2-135m), tokenized each text sample in the test set, and passing it through to calculate the average loss across the tokens. Then we are using the negative value of this loss as our prediction score (since lower loss means higher likelihood of being a member).
+
+__What is the motivation behind this baseline?__<br>
+This approach relies on the basic "seen vs. unseen" gap in language models. Because autoregressive models are trained to minimize cross-entropy loss, they naturally assign higher probabilities (and thus, lower loss or perplexity) to the data they were finetuned on. Using the raw loss gives us a strong, zero-shot signal for memorization without having to train a separate attack model right out of the gate.
+
+__What hardware (CPUs, GPUs, or memory, etc) did you use?__<br>
+We are running the inference locally on an Apple M-series chip utilizing MPS (Metal Performance Shaders) with 16GB of unified memory. If we find that we need more compute power for the larger 360m model or for faster batch processing, we will look into migrating our workflow to Google Colab using the T4 GPU.
+
+__How did it work?__<br>
+After generating the negative loss scores for the unlabelled test set, we submitted our predictions to the Kaggle competition. Baseline is listed on the leaderboard on Kaggle.
+
+
 ## Contributions
 
 ### Milestone 1

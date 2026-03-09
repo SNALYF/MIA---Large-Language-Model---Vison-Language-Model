@@ -13,9 +13,10 @@ TFC/
 │   ├── README.md           # Milestone 1 overview and code navigation
 │   ├── teamwork_contract.md
 │   ├── data_inspection.md
-│   └── ...
+│
 ├── src/                    # Source code (shared across milestones)
-│   └── ...
+│   └── milestone1/
+│      └── data_insepction.py
 └── lab3.md                 # Lab 3 instructions
 ```
 

@@ -27,9 +27,14 @@ Provide:
 
 | Split | Number of Samples | Mean Length | Max Length | Min Length |
 |-------|-------------------|-------------|------------|------------|
-| Train |                   |             |            |            |
-| Dev   |                   |             |            |            |
-| Test  |                   |             |            |            |
+| Train |       50000       |    2016.88  |    5650    |     752    |
+| Dev   |       10000       |    2010.69  |    4886    |     836    |
+| Test  |       15000       |    2021.14  |    5382    |     787    |
+
+
+The dataset is a collection of medical clinical notes, specifically focusing on patient discharge summaries and detailed case reports. Each sample contains three features: an `id`, the `text` of the medical report (which includes patient demographics, medical history, treatments, and outcomes), and a binary `is_member` label (0 or 1). The `is_member` flag indicates if the sample has been used in fine tuning. If it has been, label is 1, otherwise 0.
+
+
 
 ## Evaluation Metrics
 

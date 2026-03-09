@@ -74,7 +74,14 @@ tpr_at_fixed_fpr = tpr[idx]
 
 Membership Inference Attacks (MIAs), as an approach to identify whether a specific data point belongs to a target model's training dataset, have been widely utilized, primarily in traditional machine learning models \citep{shokri2017membership}. Although some studies \citep{shi2023detecting, meeus2023did} indicate that MIAs are effective on LLMs, recent research disproves this argument, demonstrating that MIAs barely outperform random guessing when evaluating the pre-training data of large language models \citep{duan2024do}.
 
-\citet{duan2024do} conducted a performance analysis of MIAs on various models ranging from 70 million to 12 billion parameters. The evaluation targeted the following models: - Pythia: 70M, 160M, 1.4B, 2.8B, 6.9B, 12B - GPT-Neo: 125M, 1.3B, 2.7B - Datablations: 2.8B - SILO: 1.3B - OLMo: 1B, 7B The evaluation was performed on training sets composed of Wikipedia, PubMed Central, ArXiv, Pile-CC, Github, DM Math, and HackerNews. The research concludes that MIA's unreliable performance in evaluating data leakage is primarily due to two factors: first, the large scale of training data combined with near-one-epoch training limits model overfitting; second, there is an inherently fuzzy boundary, or high n-gram overlap, between member data and non-member data.
+\citet{duan2024do} conducted a performance analysis of MIAs on various models ranging from 70 million to 12 billion parameters. The evaluation targeted the following models: 
+- Pythia: 70M, 160M, 1.4B, 2.8B, 6.9B, 12B 
+- GPT-Neo: 125M, 1.3B, 2.7B 
+- Datablations: 2.8B 
+- SILO: 1.3B - OLMo: 1B, 7B 
+
+The evaluation was performed on training sets composed of Wikipedia, PubMed Central, ArXiv, Pile-CC, Github, DM Math, and HackerNews. The research concludes that MIA's unreliable performance in evaluating data leakage is primarily due to two factors: first, the large scale of training data combined with near-one-epoch training limits model overfitting; second, there is an inherently fuzzy boundary, or high n-gram overlap, between member data and non-member data.
+
 
 Furthermore, \citet{mattern2023membership} proposed an alternative methodology to bypass the reliance on reference datasets by conducting a Neighbourhood Attack. This attack was evaluated during the fine-tuning phase on the 117M parameter version of GPT-2. The target model was fine-tuned on 60,000 samples from the AG News corpus, 150,000 samples from Twitter, and 100,000 samples from Wikitext-103, while the neighbour texts were dynamically generated using a pre-trained BERT model. The paper finds that the Neighbourhood attack can outperform traditional reference-based MIAs (e.g., LiRA) by up to 100% under realistic assumptions.
 

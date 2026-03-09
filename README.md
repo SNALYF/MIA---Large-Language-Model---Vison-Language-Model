@@ -9,11 +9,14 @@ This repository contains the group project for COLX 531. The task involves membe
 ```
 TFC/
 ├── README.md               # This file
+├── documentation/          # Documentation for the project
+│   ├── milestone1/
+│   │   ├── teamwork_contract.md
+│
 ├── milestone1/             # Milestone 1 deliverables
-│   ├── README.md           # Milestone 1 overview and code navigation
 │   ├── teamwork_contract.md
 │   ├── data_inspection.md
-│
+
 ├── src/                    # Source code (shared across milestones)
 │   └── milestone1/
 │      └── data_insepction.py
@@ -29,7 +32,7 @@ TFC/
 
 | Milestone   | Folder        | Status      |
 |-------------|---------------|-------------|
-| Milestone 1 | `milestone1/` | In Progress |
+| Milestone 1 | `milestone1/` | Finished |
 
 ## Getting Started
 

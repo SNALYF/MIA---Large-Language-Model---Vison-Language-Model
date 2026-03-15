@@ -33,6 +33,7 @@ TFC/
 | Milestone   | Folder        | Status      |
 |-------------|---------------|-------------|
 | Milestone 1 | `milestone1/` | Finished |
+| Milestone 2 | `milestone2/` | Finished |
 
 ## Getting Started
 

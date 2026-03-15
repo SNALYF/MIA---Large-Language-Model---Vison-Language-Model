@@ -47,6 +47,7 @@ Because Kaggle test set labels are hidden, we performed local evaluation using t
 |:--------------------|:------:|:--------------------------------------:|
 | Baseline (Raw Loss) | 0.5839 |                 0.1552                 |
 | Min-K% Prob         | 0.6166 |                 0.1682                 |
+| Casing Attack       | 0.5887 |                 0.1566                 |
 
 ### Discussions
 

@@ -47,11 +47,33 @@ Because Kaggle test set labels are hidden, we performed local evaluation using t
 |:--------------------|:------:|:--------------------------------------:|
 | Baseline (Raw Loss) | 0.5839 |                 0.1552                 |
 | Min-K% Prob         | 0.6166 |                 0.1682                 |
-| Casing Attack       | 0.5887 |                 0.1566                 |
 
 ### Discussions
 
 Min-K% Prob operates on the principle that memorization is most visible in the tails of the token-level probability distribution. A model that has memorized a text will assign non-trivially high probability even to tokens that are contextually difficult to predict (rare words, domain-specific terms, unusual phrasing). In contrast, for non-member text, these difficult tokens remain genuinely surprising, producing very low probabilities. As evaluated on the validation set, this normalization resulted in a minor 8.4% relative improvement in True Positive Rate at a 10% False Positive Rate (increasing from 15.5% to 16.8%), and increased the overall AUC from 0.58 to 0.61.
+
+## Model 3: **Casing Attack**
+
+### Model Description
+
+**Casing Attack** exploits the fact that language models often memorize the exact formatting and casing of their training data. For a given text, we compute the model's loss on the original text and its loss on a completely lowercased version of the text. If the model has memorized the text, perturbing its casing will disrupt the specific token sequences it learned, leading to a noticeable spike in loss. We calculate multiple features for each sample—including original loss, lowercase loss, their difference, and their ratio—and train a supervised model (Logistic Regression) to predict the membership probability based on these casing manipulation signals.
+
+### Implementation
+
+We implemented this method in `milestone2/src/casing_attack.py`. The script computes the necessary casing features using the target model and trains a logistic regression model to output the final membership score.
+
+### Results
+
+Because Kaggle test set labels are hidden, we performed local evaluation using the `validation` split to assess the performance of our new method against the baseline.
+
+| Method              |  AUC   | [TPR\@FPR](mailto:TPR@FPR){.email}=0.1 |
+|:--------------------|:------:|:--------------------------------------:|
+| Baseline (Raw Loss) | 0.5839 |                 0.1552                 |
+| Casing Attack       | 0.5887 |                 0.1566                 |
+
+### Discussions
+
+The Casing Attack operates on the premise that memorization includes stylistic details such as capitalization. By measuring the model's "surprise" when presented with a synthetically lowercased version of a familiar text, we aimed to isolate the memorization signal. However, our empirical results indicate that this method yields only a very marginal improvement over the raw loss baseline. As evaluated on the validation set, the True Positive Rate at a 10% False Positive Rate only increased slightly from 15.52% to 15.66%, and the overall AUC saw a minor increase from 0.5839 to 0.5887. This suggests that the target model might not rely heavily on exact casing for memorization on this specific dataset, or that casing perturbations alone are an insufficient membership signal for this task domain.
 
 ------------------------------------------------------------------------
 

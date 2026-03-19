@@ -8,19 +8,39 @@ This repository contains the group project for COLX 531. The task involves membe
 
 ```
 TFC/
-├── README.md               # This file
-├── documentation/          # Documentation for the project
-│   ├── milestone1/
-│   │   ├── teamwork_contract.md
-│
-├── milestone1/             # Milestone 1 deliverables
-│   ├── teamwork_contract.md
-│   ├── data_inspection.md
-
-├── src/                    # Source code (shared across milestones)
-│   └── milestone1/
-│      └── data_insepction.py
-└── lab3.md                 # Lab 3 instructions
+├── README.md                          # This file
+├── requirements.txt                   # Python dependencies
+├── documentation/                     # Project-level documentation
+│   └── team_contract.md
+├── milestone1/                        # Milestone 1 deliverables
+│   ├── documentation/
+│   │   ├── data_inspection.md
+│   │   ├── baseline_submission.csv
+│   │   └── milestone1_group_report.md
+│   └── src/
+│       ├── data_inspection.py
+│       └── baseline.py
+├── milestone2/                        # Milestone 2 deliverables
+│   ├── documentation/
+│   │   └── milestone2_group_report.md
+│   └── src/
+│       ├── casing_attack.py
+│       ├── min_k_prob.py
+│       ├── metric_threshold_attack.py
+│       ├── reference_model.py
+│       └── milestone2/               # Submission outputs
+│           ├── casing_attack_submission.csv
+│           ├── metric_threshold_submission.csv
+│           ├── metric_threshold_all_scores.csv
+│           ├── neighborhood_attack_submission.csv
+│           ├── neighborhood_attack_details.csv
+│           ├── camia_submission.csv
+│           └── camia_all_signals.csv
+└── milestone3/                        # Milestone 3 deliverables
+    ├── document/
+    │   └── milestone3_group_report.md
+    └── src/
+        └── neighborhood_attack.py
 ```
 
 ## Branch Strategy
@@ -34,24 +54,7 @@ TFC/
 |-------------|---------------|-------------|
 | Milestone 1 | `milestone1/` | Finished |
 | Milestone 2 | `milestone2/` | Finished |
-
-## Getting Started
-
-### Load the Dataset
-
-```python
-from datasets import load_dataset
-dataset = load_dataset("UBC-SLIME/colx_531_group_project")
-```
-
-### Load the Finetuned Models
-
-```python
-from transformers import AutoModelForCausalLM
-
-lm1 = AutoModelForCausalLM.from_pretrained("UBC-SLIME/colx_531_smollm2-135m")
-lm2 = AutoModelForCausalLM.from_pretrained("UBC-SLIME/colx_531_smollm2-360m")
-```
+| Milestone 3 | `milestone3/` | Finished |
 
 ## Team Members
 

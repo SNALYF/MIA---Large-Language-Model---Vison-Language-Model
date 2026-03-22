@@ -1,6 +1,6 @@
 # Milestone 1 Progress Report
 
-**Team:** TFC\
+**Team:** TFC
 **Members:** Tianhao Cao, Yusen Huang, Marco Wang, Darwin Zhang
 
 ------------------------------------------------------------------------

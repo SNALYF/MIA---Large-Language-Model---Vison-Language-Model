@@ -46,7 +46,7 @@ The dramatic improvement (AUC: 0.58 → 0.91) is primarily driven by **cross-mod
 
 ## Contributions
 
-### Milestone 2
+### Milestone 3
 
 | Member       | Contributions     | Percentage |
 |--------------|-------------------|------------|

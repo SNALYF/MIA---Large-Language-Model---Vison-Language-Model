@@ -34,12 +34,28 @@ This paper addresses the important data security concerns regarding VLLMs' train
 
 **Main Contribution:** They released the first MIA benchmark (VL-MIA) specifically designed for VLLMs and they also proposed a **cross-modal pipeline** that enables image MIA by computing metrics from text logit slices, solving the problem that image tokens aren't directly accessible in VLLMs. They finally introduced **MaxRényi-K%**, a target-free metric based on Rényi entropy that generalizes existing methods like Min-K% and works on both image and text modalities.
 
+**Paper 2: The Sample Complexity of Membership Inference and Privacy Auditing**
+
+This paper studies membership inference attacks (MIAs) from a theoretical angle by asking how much extra information an attacker needs to succeed. Instead of testing LLMs or VLMs directly, it looks at a simpler setting called Gaussian mean estimation, where a model learns from $n$ samples and releases a noisy estimate. The main finding is that an attacker may need far more reference samples than the model used for training, unlike many existing MIA methods that only use $O(n)$ samples. The paper also points out that current privacy audits may underestimate risk if they do not fully use information about the data distribution.
+**Short summary:**
+
+**Main Task**: The paper tries to solve the problem of sample complexity in membership inference attacks. More specifically, it asks: given access to a model output and a target example, how many auxiliary samples from the same population are needed for an attacker to distinguish whether the target was in the training set or not? The paper focuses on sample-based MIAs in Gaussian mean estimation and compares the unknown-covariance and known-covariance settings.
+
+**Dataset**: This paper does not use a real benchmark dataset like Flickr, LAION, or WikiMIA. Instead, it studies a theoretical data setting where the population distribution is a $d$-dimensional Gaussian distribution $N(\mu, \Sigma)$, and the training data consists of $n$ i.i.d. samples drawn from that distribution.
+
+**Models:** Model: The model studied in the paper is not a VLM or LLM, but a Gaussian mean estimator. The main estimator considered is the noisy empirical mean, which outputs the sample mean plus Gaussian noise: $$\\hat{\\mu} = \\frac{1}{n} \\sum_{i=1}^{n} X_i + \\rho Z, Z \\sim N(0, \\Sigma)$$
+The attacker then tries to infer whether a target sample was used in training based on this released estimate and a set of auxiliary samples.
+
+**Main Contribution:** The paper shows that when the covariance is unknown, a successful sample-based MIA may need much more auxiliary data than expected, up to $\\Omega(n + n^2\\rho^2)$ samples. This means the attacker can sometimes need far more data than the model used for training. It also shows that the problem becomes much easier when the covariance is known, so estimating covariance is the main challenge. Overall, the paper suggests that many current MIA methods, which usually use only $O(n)$ reference samples, may underestimate real privacy risk.
+
 ***Citation:** Li, Z., Wu, Y., Chen, Y., Tonin, F., Abad Rocamora, E., & Cevher, V. (2024). Membership Inference Attacks against Large Vision-Language Models. Proceedings of the 38th Conference on Neural Information Processing Systems (NeurIPS 2024).*
 
+***Citation:** Haghifam, M., Smith, A., & Ullman, J. (2025). The Sample Complexity of Membership Inference and Privacy Auditing. arXiv preprint arXiv:2508.19458.*
+
+---
 ## Contributions
 
 ### Milestone 4
-
 | Member       | Contributions     | Percentage |
 |--------------|-------------------|------------|
 | Tianhao Cao  | Methods           | 25%        |

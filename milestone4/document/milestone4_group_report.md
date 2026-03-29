@@ -35,3 +35,16 @@ This paper addresses the important data security concerns regarding VLLMs' train
 **Main Contribution:** They released the first MIA benchmark (VL-MIA) specifically designed for VLLMs and they also proposed a **cross-modal pipeline** that enables image MIA by computing metrics from text logit slices, solving the problem that image tokens aren't directly accessible in VLLMs. They finally introduced **MaxRényi-K%**, a target-free metric based on Rényi entropy that generalizes existing methods like Min-K% and works on both image and text modalities.
 
 ***Citation:** Li, Z., Wu, Y., Chen, Y., Tonin, F., Abad Rocamora, E., & Cevher, V. (2024). Membership Inference Attacks against Large Vision-Language Models. Proceedings of the 38th Conference on Neural Information Processing Systems (NeurIPS 2024).*
+
+## Contributions
+
+### Milestone 4
+
+| Member       | Contributions     | Percentage |
+|--------------|-------------------|------------|
+| Tianhao Cao  | Methods           | 25%        |
+| Yusen Huang  | Methods           | 25%        |
+| Marco Wang   | Methods           | 25%        |
+| Darwin Zhang | Literature Review | 25%        |
+
+**Total:** 100%

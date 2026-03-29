@@ -53,17 +53,14 @@ The attacker then tries to infer whether a target sample was used in training ba
 ***Citation:** Haghifam, M., Smith, A., & Ullman, J. (2025). The Sample Complexity of Membership Inference and Privacy Auditing. arXiv preprint arXiv:2508.19458.*
 
 ---
-
 ## Contributions
 
 ### Milestone 4
-
-| Member       | Percentage |
-|--------------|------------|
-| Tianhao Cao  | 25%        |
-| Yusen Huang  | 25%        |
-| Marco Wang   | 25%        |
-| Darwin Zhang | 25%        |
+| Member       | Contributions     | Percentage |
+|--------------|-------------------|------------|
+| Tianhao Cao  | Methods           | 25%        |
+| Yusen Huang  | Methods           | 25%        |
+| Marco Wang   | Methods           | 25%        |
+| Darwin Zhang | Literature Review | 25%        |
 
 **Total:** 100%
-

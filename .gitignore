@@ -31,3 +31,13 @@ Thumbs.db
 # Data files
 *.csv
 !submission_sample.csv
+
+# Secrets
+.env
+*.env
+
+# Claude Code
+.claude/
+
+# Precomputed features
+*_features*.json

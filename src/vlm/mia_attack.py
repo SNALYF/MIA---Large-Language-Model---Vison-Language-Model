@@ -16,10 +16,6 @@ Usage:
   - Run train_and_predict() to get submission scores.
 """
 
-from google.colab import drive
-
-drive.mount("/content/drive")
-
 import os
 import io
 import json
